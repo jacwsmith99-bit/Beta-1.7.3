@@ -1,4 +1,4 @@
-name: Deploy Beta 1.7.3
+name: Deploy Eaglercraft
 
 on:
   push:
@@ -13,11 +13,11 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -26,7 +26,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload web folder
+      - name: Upload web directory
         uses: actions/upload-pages-artifact@v3
         with:
           path: './web'
